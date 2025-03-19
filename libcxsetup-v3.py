@@ -1,51 +1,51 @@
 import os
 import traceback
 
-import appdetector
-import bottlemanagement
-import bottlequery
-import bottlewrapper
-import c4profilesmanager
-import cddetector
-import cxproduct
-import cxaiengine
-import cxmenu
-import demoutils
-import iconutils
-import installtask
-import ratingutils
-import webtoken
+import appdetector as a
+import bottlemanagement as b
+import bottlequery as c
+import bottlewrapper as d
+import c4profilesmanager as e
+import cddetector as f
+import cxproduct as g
+import cxaiengine as h
+import cxmenu as i
+import demoutils as j
+import iconutils as k
+import installtask as l
+import ratingutils as m
+import webtoken as n
 
-import fileupdate
+import fileupdate as o
 
-def is_really_signed(datafile, sigfile = (None,)):
+def x(y, z=(None,)):
     return True
 
-fileupdate.is_signed = is_really_signed
+o.is_signed = x
 
-class CXSetup(Foundation.NSObject):
-
-    @classmethod
-    def setEnvValue_forKey_(cls, value, key):
-        os.environ[key] = value
+class Q(Foundation.NSObject):
 
     @classmethod
-    def unsetEnvValueForKey_(cls, key):
-        if key in os.environ:
-            del os.environ[key]
+    def A(cls, B, C):
+        os.environ[C] = B
 
     @classmethod
-    def bottleCategory_(cls, category):
-        return installtask.__dict__['CAT_' + category]
+    def B(cls, C):
+        if C in os.environ:
+            del os.environ[C]
 
     @classmethod
-    def dependencyReason_(cls, reason):
-        return installtask.__dict__['REASON_' + reason]
+    def C(cls, D):
+        return l.__dict__['CAT_' + D]
 
     @classmethod
-    def dependencyOverride_(cls, override):
-        return installtask.__dict__['OVERRIDE_' + override]
+    def D(cls, E):
+        return l.__dict__['REASON_' + E]
 
     @classmethod
-    def bottleStatus_(cls, status):
-        return bottlewrapper.BottleWrapper.__dict__['STATUS_' + status]
+    def E(cls, F):
+        return l.__dict__['OVERRIDE_' + F]
+
+    @classmethod
+    def F(cls, G):
+        return d.BottleWrapper.__dict__['STATUS_' + G]
